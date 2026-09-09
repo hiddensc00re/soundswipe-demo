@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* HSL Color Palette */
+  --bg-dark: 224 71% 4%;
+  --bg-card: 224 71% 8%;
+  --bg-glass: 224 71% 6% / 0.7;
+  --text-primary: 210 40% 98%;
+  --text-secondary: 215 20.2% 65.1%;
+  --text-muted: 217.9 10.6% 49.3%;
+  
+  --accent-purple: 270 95% 60%;
+  --accent-pink: 325 95% 60%;
+  --accent-cyan: 180 100% 50%;
+  --accent-emerald: 150 100% 45%;
+  
+  --border-color: 217.2 32.6% 17.5%;
+  --border-glow: 270 95% 60% / 0.15;
+  
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  font-family: var(--font-sans);
+  color-scheme: dark;
+  background-color: hsl(var(--bg-dark));
+  color: hsl(var(--text-primary));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: hsl(var(--bg-dark));
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px; /* Make it look like an elegant mobile app container on desktop, centered */
+  height: 100vh;
+  max-height: 900px;
+  background-color: hsl(var(--bg-card));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+/* For larger desktops, center the phone mockup. On mobile, stretch full screen */
+@media (max-width: 600px) {
+  body {
+    align-items: stretch;
+  }
+  #root {
+    max-width: 100%;
+    height: 100svh;
+    max-height: 100svh;
+    border-radius: 0;
+    border: none;
+  }
+}
+
+/* Animations */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px hsl(var(--accent-purple) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px hsl(var(--accent-pink) / 0.4);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-muted));
+}
