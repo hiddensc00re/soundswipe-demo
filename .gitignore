@@ -1,0 +1,51 @@
+# Neon
+.neon
+.env.local
+
+# Environment secrets
+.env
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+*.so
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+
+# Django
+backend/db.sqlite3
+backend/staticfiles/
+backend/media/
+*.log
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Vite
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
